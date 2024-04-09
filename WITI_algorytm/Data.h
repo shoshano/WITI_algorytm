@@ -17,6 +17,7 @@ class Data
 	std::string file_path;
 
 public:
+
 	void GetData();
 };
 
