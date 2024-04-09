@@ -7,6 +7,11 @@ Task::Task(int Tp, int W, int Tw)
 	this->Tw = Tw;
 }
 
+int Task::get_Id()
+{
+	return this->Id;
+}
+
 int Task::get_Tp()
 {
 	return this->Tp;
