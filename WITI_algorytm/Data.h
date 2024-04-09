@@ -1,5 +1,6 @@
 #pragma once
 #include "Task.h"
+#include "Result.h"
 #include <vector>
 #include <string>
 #include <fstream>
@@ -19,6 +20,8 @@ class Data
 public:
 
 	void GetData();
+
+	Result firstAlg();
 };
 
 
