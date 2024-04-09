@@ -19,5 +19,7 @@ class Data
 public:
 
 	void GetData();
+	void getData();
 };
+
 

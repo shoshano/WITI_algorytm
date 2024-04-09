@@ -1,6 +1,7 @@
 #include "Data.h"
 
-void Dane::GetData() {
+void Data::GetData() 
+{
 	number_of_data = 0;
 	std::string n;
 	std::fstream file;
