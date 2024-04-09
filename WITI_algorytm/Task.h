@@ -8,7 +8,7 @@ private:
 	int Tw; //wymagane do czasu
 
 public:
-	Task(int Tp, int W, int Tw);
+	Task(int Id, int Tp, int W, int Tw);
 	int get_Id();
 	int get_Tp();
 	int get_W();

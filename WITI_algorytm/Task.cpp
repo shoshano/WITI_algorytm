@@ -1,7 +1,8 @@
 #include "Task.h"
 
-Task::Task(int Tp, int W, int Tw)
+Task::Task(int Id, int Tp, int W, int Tw)
 {
+	this->Id = Id;
 	this->Tp = Tp;
 	this->W = W;
 	this->Tw = Tw;
