@@ -20,8 +20,14 @@ class Data
 public:
 
 	void GetData();
+	Data(std::string fp);
+	Result SortW();
+	Result SortTw();
 
-	Result firstAlg();
+	std::vector<Task> getList();
+	std::string getFilePath();
+
+	void printList();
 };
 
 

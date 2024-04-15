@@ -7,21 +7,44 @@
 
 using namespace std;
 
-int main()
+vector<string> getFileName()
 {
-    vector<string> FileNames;
+    vector<string> tmpVec;
+
     string name = "data";
     string exension = ".txt";
 
     for (int i = 10; i < 21; i++)
     {
         string tmp = to_string(i);
-        string tmpName= name + tmp;
-        FileNames.push_back(tmpName);
+        string tmpName = name + tmp + exension;
+        tmpVec.push_back(tmpName);
     }
+    return tmpVec;
+}
+
+int main()
+{
+    vector<string> FileNames = getFileName(); 
+    vector<Data> dataTab;
+    vector<Result> resultTab;
+
+    
 
     for (auto x : FileNames)
     {
-        cout << x << "\n";
+        Data tmp = Data(x);
+        dataTab.push_back(tmp);
     }
+    /*
+    for (auto x : dataTab)
+    {
+        cout << endl << x.getFilePath() << endl;
+        x.printList();
+    }*/
+
+    //Result temp =  dataTab[0].SortW();
+    Result temp =  dataTab[0].SortTw();
+    cout << temp.get_Penalty() << endl;
+    temp.printOrder();
 }

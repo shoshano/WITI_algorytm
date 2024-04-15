@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 class Task
 {
 private:
@@ -13,6 +15,7 @@ public:
 	int get_Tp();
 	int get_W();
 	int get_Tw();
+	void printTask();
 
 
 

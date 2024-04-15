@@ -29,3 +29,56 @@ void Data::GetData()
 	}
 }
 
+Data::Data(std::string fp)
+{
+	file_path = fp;
+	GetData();
+}
+
+Result Data::SortW() //sort W
+{
+	std::vector<Task> temp = this->list;
+	sort(temp.begin(), temp.end(), [](Task l, Task r) {
+			return l.get_W() > r.get_W();
+	});
+
+	Result result(temp);
+
+
+	return result;
+}
+
+Result Data::SortTw() //sort tW
+{
+	std::vector<Task> temp = this->list;
+	sort(temp.begin(), temp.end(), [](Task l, Task r) {
+		return l.get_Tw() < r.get_Tw();
+		});
+
+	Result result(temp);
+
+
+	return result;
+}
+
+
+std::vector<Task> Data::getList()
+{
+	return this->list;
+}
+
+std::string Data::getFilePath()
+{
+	return this->file_path;
+
+}
+
+void Data::printList()
+{
+	for(auto i:list)
+	{
+		i.printTask();
+	}
+	
+}
+

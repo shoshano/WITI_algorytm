@@ -28,5 +28,10 @@ int Task::get_Tw()
 	return this->Tw;
 }
 
+void Task::printTask()
+{
+	std::cout << "ID: " << Id << "\tTp: " << Tp << "\tW: " << W << "\tTw: " << Tw << "\n";
+}
+
 
 
