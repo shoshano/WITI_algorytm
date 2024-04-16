@@ -44,7 +44,10 @@ int main()
     }*/
 
     //Result temp =  dataTab[0].SortW();
-    Result temp =  dataTab[0].SortTw();
+    //Result temp =  dataTab[0].SortTw();
+    Result tempData =  dataTab[0].SortTw();
+    //Result temp =  dataTab[0].PD_Algorytm();
+    Result temp =  dataTab[0].TabuAlg(tempData);
     cout << temp.get_Penalty() << endl;
     temp.printOrder();
 }

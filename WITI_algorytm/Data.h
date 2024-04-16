@@ -23,6 +23,8 @@ public:
 	Data(std::string fp);
 	Result SortW();
 	Result SortTw();
+	Result PD_Algorytm();
+	Result TabuAlg(Result res);
 
 	std::vector<Task> getList();
 	std::string getFilePath();

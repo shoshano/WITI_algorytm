@@ -61,6 +61,63 @@ Result Data::SortTw() //sort tW
 	return result;
 }
 
+Result Data::PD_Algorytm()
+{
+	std::vector<Task> tmpOrder = list;
+
+	std::vector<std::vector<Result>> Results;
+
+
+	std::vector<Result> tmpVec;
+	for (auto x : tmpOrder)
+	{
+		std::vector<Task> tmpTaskVec;
+		tmpTaskVec.push_back(x);
+		Result res = Result(tmpTaskVec);
+
+		tmpVec.push_back(res);
+
+		tmpTaskVec.clear();
+	}
+
+	Result result(tmpOrder);
+	return result;
+}
+
+Result Data::TabuAlg(Result res)
+{
+	std::vector<Task> s = res.get_Order();
+	//std::vector<Task> s = schrage();
+	std::vector<Task> best = s;
+
+	int bestPen = res.coutPenalty();
+
+	std::vector<std::vector<Task>> neighbors;
+	for (int i = 0; i < s.size(); i++)
+	{
+		for (int j = i + 1; j < s.size(); j++)
+		{
+			std::vector<Task> neighbor = s;
+			std::swap(neighbor.at(i), neighbor.at(j));
+			neighbors.push_back(neighbor);
+		}
+	}
+
+	for (auto x : neighbors)
+	{
+		Result result(x);
+		int tmpPen = result.coutPenalty();
+		if (tmpPen < bestPen)
+		{
+			best = x;
+			bestPen = tmpPen;
+		}
+	}
+
+	Result bestRes(best);
+	return bestRes;
+}
+
 
 std::vector<Task> Data::getList()
 {
