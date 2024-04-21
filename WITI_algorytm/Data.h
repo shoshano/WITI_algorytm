@@ -15,6 +15,7 @@ class Data
 {
 	int number_of_data;
 	std::vector <Task> list;
+	std::vector <Task> resultsList;
 	std::string file_path;
 
 public:
@@ -23,10 +24,14 @@ public:
 	Data(std::string fp);
 	Result SortW();
 	Result SortTw();
-	Result PD_Algorytm();
+	void PD_Algorytm(std::vector<Task> vec);
+	Result makeResult(std::vector <Task> order);
 	Result TabuAlg(Result res);
+	int penalty(int time, Task task);
+	int count_time(std::vector<Task> vec);
 
 	std::vector<Task> getList();
+	std::vector<Task> getResultOrder();
 	std::string getFilePath();
 
 	void printList();

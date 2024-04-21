@@ -49,4 +49,11 @@ void Result::printOrder()
 		std::cout << i.get_Id() << " ";
 	}
 
+	std::cout <<  "\n\n";
+}
+
+void Result::printResult()
+{
+	std::cout << Penalty << "\n";
+	printOrder();
 }

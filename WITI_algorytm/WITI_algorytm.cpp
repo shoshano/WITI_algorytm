@@ -45,9 +45,22 @@ int main()
 
     //Result temp =  dataTab[0].SortW();
     //Result temp =  dataTab[0].SortTw();
-    Result tempData =  dataTab[0].SortTw();
-    //Result temp =  dataTab[0].PD_Algorytm();
-    Result temp =  dataTab[0].TabuAlg(tempData);
-    cout << temp.get_Penalty() << endl;
-    temp.printOrder();
+    //Result temp =  dataTab[0].TabuAlg(tempData);
+
+    for (auto x : dataTab)
+    {
+        x.PD_Algorytm(x.getList());
+        Result res = x.makeResult(x.getResultOrder());
+        res.printResult();
+    }
+
+    //Data data = dataTab[0];
+
+    //data.PD_Algorytm(data.getList());
+    //Result res = data.makeResult(data.getResultOrder());
+    //res.printResult();
+
 }
+
+
+// 

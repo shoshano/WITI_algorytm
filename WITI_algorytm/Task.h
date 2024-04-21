@@ -15,10 +15,6 @@ public:
 	int get_Tp();
 	int get_W();
 	int get_Tw();
-	void printTask();
-
-
-
-	
+	void printTask();	
 };
 

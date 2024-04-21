@@ -19,5 +19,6 @@ public:
 	int coutPenalty();
 
 	void printOrder();
+	void printResult();
 };
 
