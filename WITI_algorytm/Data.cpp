@@ -61,39 +61,41 @@ Result Data::SortTw() //sort tW
 	return result;
 }
 
-void Data::PD_Algorytm(std::vector<Task> vec)
+void Data::PD_Algorytm()
 {
 	//std::vector<Task> tmpOrder = vec;
-	if (vec.size() == 1)
+	if (list.size() == 1)
 	{
-		resultsList.push_back(vec.at(0));
+		//resultsList.push_back(vec.at(0));
 		return;
 	}
 	
-	int cTime = count_time(vec);
+	int cTime = count_time(list);
 	int current_penalty = INT16_MAX;
 	int chosen_id = 0;
 
-	for (int i =0; i<vec.size();++i)
+	for (int i =0; i<list.size();++i)
 	{
-		int pen = penalty(cTime, vec.at(i));
-		if (current_penalty > pen)
+		int pen = penalty(cTime, list.at(i));
+		if (pen < current_penalty || (current_penalty == pen && i > chosen_id))
 		{
 			chosen_id = i;
 			current_penalty = pen;
 		}
 	}
 
-	Task tmp = vec.at(chosen_id);
-	vec.erase(vec.begin() + chosen_id);
-	PD_Algorytm(vec);
-	resultsList.push_back(tmp);
+	Task tmp = list.at(chosen_id);
+	list.erase(list.begin() + chosen_id);
+	PD_Algorytm();
+	//resultsList.push_back(tmp);
+	list.push_back(tmp);
 	return;
 }
 
-Result Data::makeResult(std::vector<Task> order)
+Result Data::makeResult()
 {
-	return Result(order);
+	PD_Algorytm();
+	return Result(list);
 }
 
 Result Data::TabuAlg(Result res)
@@ -136,10 +138,6 @@ std::vector<Task> Data::getList()
 	return this->list;
 }
 
-std::vector<Task> Data::getResultOrder()
-{
-	return this->resultsList;
-}
 
 std::string Data::getFilePath()
 {

@@ -15,25 +15,30 @@ class Data
 {
 	int number_of_data;
 	std::vector <Task> list;
-	std::vector <Task> resultsList;
 	std::string file_path;
 
 public:
+	void GetData(); // pobira z pliku txt
 
-	void GetData();
-	Data(std::string fp);
+	Data(std::string fp); // konstruktor
+	// wlasne algorytmy
 	Result SortW();
 	Result SortTw();
-	void PD_Algorytm(std::vector<Task> vec);
-	Result makeResult(std::vector <Task> order);
 	Result TabuAlg(Result res);
+
+	// algorytm pd
+	void PD_Algorytm();
+	Result makeResult();
+
+	//liczenie kary i aktalengo czasu
 	int penalty(int time, Task task);
 	int count_time(std::vector<Task> vec);
 
+	// gettery
 	std::vector<Task> getList();
-	std::vector<Task> getResultOrder();
 	std::string getFilePath();
 
+	// wyswitla liste
 	void printList();
 };
 
