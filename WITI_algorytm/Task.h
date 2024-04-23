@@ -17,4 +17,3 @@ public:
 	int get_Tw();
 	void printTask();	
 };
-

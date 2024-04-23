@@ -63,10 +63,8 @@ Result Data::SortTw() //sort tW
 
 void Data::PD_Algorytm()
 {
-	//std::vector<Task> tmpOrder = vec;
 	if (list.size() == 1)
 	{
-		//resultsList.push_back(vec.at(0));
 		return;
 	}
 	
@@ -87,7 +85,6 @@ void Data::PD_Algorytm()
 	Task tmp = list.at(chosen_id);
 	list.erase(list.begin() + chosen_id);
 	PD_Algorytm();
-	//resultsList.push_back(tmp);
 	list.push_back(tmp);
 	return;
 }
